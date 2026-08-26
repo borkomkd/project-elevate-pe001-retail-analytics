@@ -93,6 +93,39 @@ The project follows a structured consulting approach consisting of the following
 
 ---
 
+# Project Status
+
+| Phase | Status |
+|--------|--------|
+| Planning | ✅ Completed |
+| Business Context | ✅ Completed |
+| Current State Assessment | 🔄 In Progress |
+| SQL Database Design | ⏳ Planned |
+| Azure SQL Migration | ⏳ Planned |
+| Power BI Development | ⏳ Planned |
+| Business Recommendations | ⏳ Planned |
+| Final Case Study | ⏳ Planned |
+
+---
+
+# Project Documentation
+
+The following documents describe the consulting engagement from business discovery through solution design, implementation, and business recommendations.
+
+| Document | Status |
+|----------|--------|
+| PE-001_01_Business_Context | ✅ Complete |
+| PE-001_02_Current_State_Assessment | ✅ Complete |
+| PE-001_03_Business_Challenge | ✅ Complete |
+| PE-001_04_Project_Objectives | ✅ Complete |
+| PE-001_05_Assumptions_and_Constraints | ✅ Complete |
+| PE-001_06_Solution_Architecture | ✅ Complete |
+| PE-001_07_Data_Discovery_and_Assessment | 🚧 Planned |
+
+The documents are located in the `Business-Documentation` folder and are intended to be read sequentially as a complete consulting case study.
+
+---
+
 # Repository Structure
 
 ```
@@ -119,21 +152,6 @@ project-elevate-pe001-retail-analytics/
 │
 └── README.md
 ```
-
----
-
-# Project Status
-
-| Phase | Status |
-|--------|--------|
-| Planning | ✅ Completed |
-| Business Context | ✅ Completed |
-| Current State Assessment | 🔄 In Progress |
-| SQL Database Design | ⏳ Planned |
-| Azure SQL Migration | ⏳ Planned |
-| Power BI Development | ⏳ Planned |
-| Business Recommendations | ⏳ Planned |
-| Final Case Study | ⏳ Planned |
 
 ---
 
