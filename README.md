@@ -120,9 +120,22 @@ The following documents describe the consulting engagement from business discove
 | PE-001_04_Project_Objectives | ✅ Complete |
 | PE-001_05_Assumptions_and_Constraints | ✅ Complete |
 | PE-001_06_Solution_Architecture | ✅ Complete |
-| PE-001_07_Data_Discovery_and_Assessment | 🚧 Planned |
+| PE-001_07_Data_Discovery_and_Assessment | ✅ Complete |
+| PE-001_08_Data_Model_Design | ✅ Complete |
+| PE-001_09_SQL_Server_Implementation | ✅ Complete |
 
 The documents are located in the `Business-Documentation` folder and are intended to be read sequentially as a complete consulting case study.
+
+# SQL Objects
+
+| Object | Status |
+|---------|--------|
+| Reporting.DimDate | ✅ Complete |
+| Reporting.vw_FactSales | ✅ Complete |
+| Reporting.vw_DimCustomer | ✅ Complete |
+| Reporting.vw_DimProduct | ✅ Complete |
+| Reporting.vw_DimSalesTerritory | ✅ Complete |
+| Reporting.vw_DimSalesPerson | ⏳ Planned |
 
 ---
 
