@@ -183,6 +183,20 @@ Key design principles include:
 
 ---
 
+# Model Quality Principles
+
+The semantic model follows the following quality principles:
+
+- One version of the truth through standardized DAX measures.
+- Business-friendly naming conventions.
+- Star schema design for optimal performance.
+- Minimal calculated columns.
+- Reusable dimensions.
+- Clear separation between data preparation and reporting.
+- Scalable architecture for future enhancements.
+
+---
+
 # Security Considerations
 
 Version 1.0 does not implement Row-Level Security (RLS).
