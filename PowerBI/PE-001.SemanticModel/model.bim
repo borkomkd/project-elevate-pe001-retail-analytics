@@ -1,0 +1,1045 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.132.1053.0 (24.08)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DimCustomer\",\"DimProduct\",\"DimSalesPerson\",\"DimSalesTerritory\",\"FactSales\",\"DimDate\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "AutoDetected_9ca187a0-bbf8-499e-9e3e-2534987c6f3c",
+        "fromColumn": "CustomerID",
+        "fromTable": "FactSales",
+        "toColumn": "CustomerID",
+        "toTable": "DimCustomer"
+      },
+      {
+        "name": "AutoDetected_83e17112-30a3-4ce1-a028-54da8f3bfe9b",
+        "fromColumn": "TerritoryID",
+        "fromTable": "FactSales",
+        "toColumn": "TerritoryID",
+        "toTable": "DimSalesTerritory"
+      },
+      {
+        "name": "AutoDetected_aa42ce70-ee86-41df-80d6-74b3fe701df0",
+        "fromColumn": "ProductID",
+        "fromTable": "FactSales",
+        "toColumn": "ProductID",
+        "toTable": "DimProduct"
+      },
+      {
+        "name": "AutoDetected_0eae052d-9996-4697-b937-3851f4da5ae5",
+        "fromColumn": "SalesPersonID",
+        "fromTable": "FactSales",
+        "toColumn": "SalesPersonID",
+        "toTable": "DimSalesPerson"
+      },
+      {
+        "name": "a3d98b99-3cd1-5e5e-7f98-5f5a1ec4c937",
+        "fromColumn": "OrderDate",
+        "fromTable": "FactSales",
+        "toColumn": "FullDate",
+        "toTable": "DimDate"
+      }
+    ],
+    "sourceQueryCulture": "mk-MK",
+    "tables": [
+      {
+        "name": "DimCustomer",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CustomerID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6aef6dd1-59d2-4c07-a682-349f48cf7b97",
+            "sourceColumn": "CustomerID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AccountNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ed42f160-dcc4-4567-8aaa-2181216a7780",
+            "sourceColumn": "AccountNumber",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerType",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "60e17f8f-2371-4e87-ba89-581e4dd9b86d",
+            "sourceColumn": "CustomerType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eb50ef44-8a82-4388-ae60-6138811c9530",
+            "sourceColumn": "CustomerName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TerritoryID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c58dc670-ff6c-4976-a7a9-4627040ff504",
+            "sourceColumn": "TerritoryID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsActive",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "4e7e8945-9d62-454f-b15b-32cccb669ca2",
+            "sourceColumn": "IsActive",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "93b9207a-3235-40b2-bcbe-1eb3cbcbd3a9",
+        "partitions": [
+          {
+            "name": "DimCustomer",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Reporting_vw_DimCustomer = Source{[Schema=\"Reporting\",Item=\"vw_DimCustomer\"]}[Data]",
+                "in",
+                "    Reporting_vw_DimCustomer"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProduct",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ProductID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d67705f6-e3a1-4d92-8a9a-9c0793d2f311",
+            "sourceColumn": "ProductID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ee620374-10a3-42b7-9589-bebb5132e955",
+            "sourceColumn": "ProductName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3ecf99c6-5983-40dd-a6a8-04c70329072a",
+            "sourceColumn": "ProductNumber",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductCategory",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7e463906-53bf-484f-a232-cd932b8cfb87",
+            "sourceColumn": "ProductCategory",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductSubcategory",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8ef2ecbe-c568-457d-afb8-75c851dfb884",
+            "sourceColumn": "ProductSubcategory",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Color",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "df385c2c-606a-4aa6-97d7-5b37ad92f8ac",
+            "sourceColumn": "Color",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Size",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c18a2839-e487-401f-831c-26f0a0c4bc00",
+            "sourceColumn": "Size",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StandardCost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "93ca3a48-33d9-4026-9d0c-7de145c546d6",
+            "sourceColumn": "StandardCost",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ListPrice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "ad00bcbc-3abb-42bb-8cc7-bc3120537d48",
+            "sourceColumn": "ListPrice",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SellStartDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "f5c26650-d778-4c94-8bc2-767157e9aecf",
+            "sourceColumn": "SellStartDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SellEndDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "b3a935e5-0311-4f34-87b5-f7c11e9cf0b1",
+            "sourceColumn": "SellEndDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsActive",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "1194edb6-90ca-4eae-b562-c70c8317c348",
+            "sourceColumn": "IsActive",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "694c56a2-fddc-4268-b5bb-dcb700a9b02c",
+        "partitions": [
+          {
+            "name": "DimProduct",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Reporting_vw_DimProduct = Source{[Schema=\"Reporting\",Item=\"vw_DimProduct\"]}[Data]",
+                "in",
+                "    Reporting_vw_DimProduct"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSalesPerson",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "SalesPersonID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "409de98a-4201-4a16-a4bf-759710ca8692",
+            "sourceColumn": "SalesPersonID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EmployeeName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cffff97e-22a1-4cd7-b7a9-e4fc9225abae",
+            "sourceColumn": "EmployeeName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TerritoryID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "997254a7-8c1e-47ec-90d2-9d2061301c56",
+            "sourceColumn": "TerritoryID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesQuota",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "13d2e212-f0db-4e62-83b7-b49f91da139e",
+            "sourceColumn": "SalesQuota",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Bonus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "8f00b259-bdb4-4f2a-9e09-c4117e5fe765",
+            "sourceColumn": "Bonus",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CommissionPct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "b0102c55-708d-465c-86a6-6697bbe740fb",
+            "sourceColumn": "CommissionPct",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesYTD",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "f3b8f00a-2f72-40f0-b8f1-f89e31ad2a1d",
+            "sourceColumn": "SalesYTD",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesLastYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "398ae1d7-e140-4be9-9fc8-d59bfcb6df28",
+            "sourceColumn": "SalesLastYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentEmployee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "fb849b23-acdc-447f-9a0e-43a3adb4bcfe",
+            "sourceColumn": "IsCurrentEmployee",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "104af28d-7c49-4656-a08f-0ba493e94944",
+        "partitions": [
+          {
+            "name": "DimSalesPerson",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Reporting_vw_DimSalesPerson = Source{[Schema=\"Reporting\",Item=\"vw_DimSalesPerson\"]}[Data]",
+                "in",
+                "    Reporting_vw_DimSalesPerson"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSalesTerritory",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "TerritoryID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5ecf2669-fde6-458d-88e5-be2d9850ec49",
+            "sourceColumn": "TerritoryID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TerritoryName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8e7216f1-97cb-4b0a-81ed-64c238a4c544",
+            "sourceColumn": "TerritoryName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CountryRegion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2940d415-1c81-4873-9aaa-bedcc0f6d1c9",
+            "sourceColumn": "CountryRegion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesGroup",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "62d6f5c6-2351-4917-a25f-5439b50e9416",
+            "sourceColumn": "SalesGroup",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "efd5e8d2-b25f-4661-a6fb-518aebb1579b",
+        "partitions": [
+          {
+            "name": "DimSalesTerritory",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Reporting_vw_DimSalesTerritory = Source{[Schema=\"Reporting\",Item=\"vw_DimSalesTerritory\"]}[Data]",
+                "in",
+                "    Reporting_vw_DimSalesTerritory"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactSales",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "SalesOrderID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dccbce1d-82a6-4b0e-8558-f389ef063dc5",
+            "sourceColumn": "SalesOrderID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "SalesOrderDetailID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a8148b0c-d3ea-4aa7-a6be-fb09e36e7f6b",
+            "sourceColumn": "SalesOrderDetailID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "OrderDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "e12ddc5d-4349-4928-8588-94c2c11fa96b",
+            "sourceColumn": "OrderDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e0d5f375-e57f-45be-ad42-84461a0c8f41",
+            "sourceColumn": "CustomerID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "28711972-51e5-4d4e-951a-75f35496086a",
+            "sourceColumn": "ProductID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TerritoryID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "711a56af-368b-4b86-bf17-1d3ceaf5f68a",
+            "sourceColumn": "TerritoryID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesPersonID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "33071180-4f93-4033-a668-d6cdf58e7491",
+            "sourceColumn": "SalesPersonID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OrderQty",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3ea3a36c-ca7b-471b-9ea4-924ecf19f933",
+            "sourceColumn": "OrderQty",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "UnitPrice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "df26bc5e-6be4-48ac-80e9-a8d316e27149",
+            "sourceColumn": "UnitPrice",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "UnitPriceDiscount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"mk-MK\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "#,0.###############\\ \"ден\";-#,0.###############\\ \"ден\";#,0.###############\\ \"ден\"",
+            "lineageTag": "fd600900-1166-4ba1-b9b2-9b3aba35559e",
+            "sourceColumn": "UnitPriceDiscount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "LineTotal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d34e6cf4-0666-4a3f-9ed2-ac89c369ed89",
+            "sourceColumn": "LineTotal",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "914dd5da-a325-453a-8367-f462d1de3c6a",
+        "partitions": [
+          {
+            "name": "FactSales",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Reporting_vw_FactSales = Source{[Schema=\"Reporting\",Item=\"vw_FactSales\"]}[Data]",
+                "in",
+                "    Reporting_vw_FactSales"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "DateKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8096ae91-0665-441b-958f-f85d3c5c5155",
+            "sourceColumn": "DateKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FullDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "isKey": true,
+            "lineageTag": "49dd9b07-ca20-41b7-bd4e-dbe5059195b5",
+            "sourceColumn": "FullDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d01b95ff-cf98-4bd6-aa0b-985df030cb66",
+            "sourceColumn": "CalendarYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e42c7430-5806-4a61-96b5-543f781d511c",
+            "sourceColumn": "CalendarQuarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6f8c90f2-e2e5-439f-b608-3f2bd893b7ca",
+            "sourceColumn": "CalendarMonth",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8af47a19-3073-4d3d-b2b6-117cddbfec35",
+            "sourceColumn": "MonthName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WeekNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5c800d38-0e53-4aba-ae6d-012f80afe081",
+            "sourceColumn": "WeekNumber",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayOfMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ac223c9f-3c54-4465-9f6a-483997230fb8",
+            "sourceColumn": "DayOfMonth",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayOfWeek",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4a3f9125-d019-4b17-9b03-e67035364352",
+            "sourceColumn": "DayOfWeek",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8151a8b2-72e2-4aeb-a97c-652972d7678f",
+            "sourceColumn": "DayName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsWeekend",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "9ef7e2ce-7ce2-4934-a9e4-dcbb17777825",
+            "sourceColumn": "IsWeekend",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "ab6334b7-23d1-43e9-a020-e37eb87ce451",
+        "partitions": [
+          {
+            "name": "DimDate",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Reporting_DimDate = Source{[Schema=\"Reporting\",Item=\"DimDate\"]}[Data]",
+                "in",
+                "    Reporting_DimDate"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
