@@ -1039,6 +1039,46 @@
             }
           }
         ]
+      },
+      {
+        "name": "MeasuresBI",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "5a10e36c201a48139564d874306a1d17"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "f2244761-ce72-45ab-ad14-750794ca6e66",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "86b444c4-d1d0-4b67-8621-d668863ed3a6",
+        "partitions": [
+          {
+            "name": "MeasuresBI",
+            "mode": "import",
+            "source": {
+              "expression": "{ BLANK() }",
+              "type": "calculated"
+            }
+          }
+        ]
       }
     ]
   }
