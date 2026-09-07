@@ -1,5 +1,5 @@
 {
-  "compatibilityLevel": 1550,
+  "compatibilityLevel": 1567,
   "model": {
     "annotations": [
       {
@@ -70,7 +70,7 @@
         "name": "a3d98b99-3cd1-5e5e-7f98-5f5a1ec4c937",
         "fromColumn": "OrderDate",
         "fromTable": "FactSales",
-        "toColumn": "FullDate",
+        "toColumn": "Date",
         "toTable": "DimDate"
       }
     ],
@@ -878,7 +878,7 @@
             "summarizeBy": "none"
           },
           {
-            "name": "FullDate",
+            "name": "Date",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -893,7 +893,7 @@
             "formatString": "Long Date",
             "isKey": true,
             "lineageTag": "49dd9b07-ca20-41b7-bd4e-dbe5059195b5",
-            "sourceColumn": "FullDate",
+            "sourceColumn": "Date",
             "summarizeBy": "none"
           },
           {
@@ -946,8 +946,14 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
             "dataType": "string",
             "lineageTag": "8af47a19-3073-4d3d-b2b6-117cddbfec35",
+            "sortByColumn": "CalendarMonth",
             "sourceColumn": "MonthName",
             "summarizeBy": "none"
           },
@@ -1031,9 +1037,10 @@
               "expression": [
                 "let",
                 "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
-                "    Reporting_DimDate = Source{[Schema=\"Reporting\",Item=\"DimDate\"]}[Data]",
+                "    Reporting_DimDate = Source{[Schema=\"Reporting\",Item=\"DimDate\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(Reporting_DimDate,{{\"FullDate\", \"Date\"}})",
                 "in",
-                "    Reporting_DimDate"
+                "    #\"Renamed Columns\""
               ],
               "type": "m"
             }
@@ -1060,7 +1067,6 @@
             "dataType": "int64",
             "formatString": "0",
             "isDataTypeInferred": true,
-            "isHidden": true,
             "isNameInferred": true,
             "lineageTag": "f2244761-ce72-45ab-ad14-750794ca6e66",
             "sourceColumn": "[Value]",
@@ -1069,6 +1075,176 @@
           }
         ],
         "lineageTag": "86b444c4-d1d0-4b67-8621-d668863ed3a6",
+        "measures": [
+          {
+            "name": "Total Sales",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "SUM ( FactSales[LineTotal] )"
+            ],
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "lineageTag": "f0319e29-2b1d-4cea-afce-c4be22b931ac"
+          },
+          {
+            "name": "Total Orders",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "DISTINCTCOUNT ( FactSales[SalesOrderID] )"
+            ],
+            "formatString": "0",
+            "lineageTag": "92d6082c-349e-4f2e-a96e-e4de24ef99ae"
+          },
+          {
+            "name": "Total Quantity Sold",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "SUM ( FactSales[OrderQty] )"
+            ],
+            "formatString": "0",
+            "lineageTag": "35fa5d1e-ad8e-4ed4-ab24-ad10a25cf7d1"
+          },
+          {
+            "name": "Average Order Value",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "DIVIDE (",
+              "    [Total Sales],",
+              "    [Total Orders]",
+              ")"
+            ],
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "43c12cb0-66ed-41da-88c5-b37eef862a37"
+          },
+          {
+            "name": "Average Selling Price",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "DIVIDE (",
+              "    [Total Sales],",
+              "    [Total Quantity Sold]",
+              ")"
+            ],
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "2cd66f09-7cd6-4f35-b575-cbfa1581455c"
+          },
+          {
+            "name": "Average Quantity per Order",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "DIVIDE (",
+              "    [Total Quantity Sold],",
+              "    [Total Orders]",
+              ")"
+            ],
+            "formatString": "0.00",
+            "lineageTag": "4def6181-1099-476b-adac-eaff41247111"
+          },
+          {
+            "name": "Sales YTD",
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "TOTALYTD (",
+              "    [Total Sales],",
+              "    DimDate[Date]",
+              ")"
+            ],
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "lineageTag": "0e383fdf-e92c-46ca-b3a4-27b8410a790b"
+          },
+          {
+            "name": "Sales MTD",
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "TOTALMTD (",
+              "    [Total Sales],",
+              "    DimDate[Date]",
+              ")"
+            ],
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "lineageTag": "659299cf-5b0c-4fb5-9164-7a498878f703"
+          },
+          {
+            "name": "Sales QTD",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "TOTALQTD (",
+              "    [Total Sales],",
+              "    DimDate[Date]",
+              ")"
+            ],
+            "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
+            "lineageTag": "6cdd5388-9656-4a1c-80a4-42fb2cd1e2ca"
+          },
+          {
+            "name": "Sales Last Year",
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "CALCULATE (",
+              "    [Total Sales],",
+              "    SAMEPERIODLASTYEAR ( DimDate[Date] )",
+              ")"
+            ],
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "180a06f9-f707-4719-a24d-dbaf3b276c02"
+          },
+          {
+            "name": "YoY Growth %",
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "DIVIDE (",
+              "    [Total Sales] - [Sales Last Year],",
+              "    [Sales Last Year]",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "80cb4257-2b14-4813-8e8c-f223dc8549af"
+          },
+          {
+            "name": "Rolling 12 Months Sales",
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "CALCULATE (",
+              "    [Total Sales],",
+              "    DATESINPERIOD (",
+              "        DimDate[Date],",
+              "        MAX ( DimDate[Date] ),",
+              "        -12,",
+              "        MONTH",
+              "    )",
+              ")"
+            ],
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "lineageTag": "8371bab8-bf73-4c51-a8df-98496061c099"
+          },
+          {
+            "name": "Latest Sales Date",
+            "displayFolder": "Time Intelligence",
+            "expression": [
+              "",
+              "MAX ( FactSales[OrderDate] )"
+            ],
+            "formatString": "Short Date",
+            "lineageTag": "fb309d5d-da5b-4e84-8011-ccf7ed1aef1d"
+          }
+        ],
         "partitions": [
           {
             "name": "MeasuresBI",
