@@ -36,6 +36,15 @@
           "z": 1000.00
         },
         {
+          "config": "{\"name\":\"1b928f570c545114a10b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":644.8632218844986,\"y\":416.29179331306995,\"z\":8001,\"width\":615.6838905775077,\"height\":208.14589665653497,\"tabOrder\":8001}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimSalesTerritory.TerritoryName\",\"active\":true}],\"Y\":[{\"queryRef\":\"MeasuresBI.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DimSalesTerritory\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"MeasuresBI\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"TerritoryName\"},\"Name\":\"DimSalesTerritory.TerritoryName\",\"NativeReferenceName\":\"TerritoryName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Sales\"},\"Name\":\"MeasuresBI.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Sales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.2}}}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Sales by Territory'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 208.15,
+          "width": 615.68,
+          "x": 644.86,
+          "y": 416.29,
+          "z": 8001.00
+        },
+        {
           "config": "{\"name\":\"30e6b6f6bfe90b9f628e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":853.9746835443036,\"y\":97.9746835443038,\"z\":4000,\"width\":197.08860759493672,\"height\":90,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"MeasuresBI.Average Selling Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MeasuresBI\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Selling Price\"},\"Name\":\"MeasuresBI.Average Selling Price\",\"NativeReferenceName\":\"Average Selling Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Selling Price\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"35D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.2}}}}}}}]}}}",
           "filters": "[]",
           "height": 90.00,
