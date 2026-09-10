@@ -2,7 +2,7 @@
 
 All notable changes to **Project Elevate – PE-001 Retail Analytics** are documented in this file.
 
-The format follows the principles of Keep a Changelog and Semantic Versioning where applicable.
+The format follows all the principles of Keep a Changelog and Semantic Versioning where applicable.
 
 ---
 
