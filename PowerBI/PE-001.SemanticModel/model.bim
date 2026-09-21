@@ -6276,38 +6276,38 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "latest comparable YoY %": {
+                    "executive YoY growth YTD %": {
                       "State": "Generated"
                     }
                   },
                   {
-                    "latest comparable yoy percentage": {
+                    "executive yoy growth ytd percentage": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
                       "State": "Suggested",
                       "Type": "Noun",
-                      "Weight": 0.771
+                      "Weight": 0.78
                     }
                   },
                   {
-                    "latest comparable yoy pct": {
+                    "executive yoy growth ytd pct": {
                       "Source": {
                         "Agent": "Thesaurus"
                       },
                       "State": "Suggested",
                       "Type": "Noun",
-                      "Weight": 0.748
+                      "Weight": 0.757
                     }
                   },
                   {
-                    "Sales Growth (YTD)": {
+                    "executive yoy growth year to date %": {
                       "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
+                        "Agent": "Thesaurus"
                       },
                       "State": "Suggested",
-                      "Weight": 0.9
+                      "Type": "Noun",
+                      "Weight": 0.528
                     }
                   }
                 ]
@@ -7145,6 +7145,98 @@
                 },
                 "State": "Generated"
               },
+              "dim_customer_has_customer_ID": {
+                "Binding": {
+                  "ConceptualEntity": "DimCustomer"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_customer.customer_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_customer"
+                      }
+                    },
+                    "ID": "dim_customers_have_customer_ID",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "customer_ID_are_names_IDs_of_dim_customers",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_customer.customer_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_customer"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_customer": {
+                    "Target": {
+                      "Entity": "dim_customer"
+                    }
+                  },
+                  "dim_customer.customer_ID": {
+                    "Target": {
+                      "Entity": "dim_customer.customer_ID"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_customer_has_customer_name": {
+                "Binding": {
+                  "ConceptualEntity": "DimCustomer"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_customer.customer_name"
+                      },
+                      "Subject": {
+                        "Role": "dim_customer"
+                      }
+                    },
+                    "ID": "dim_customers_have_customer_names",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "customer_names_are_names_IDs_of_dim_customers",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_customer.customer_name"
+                      },
+                      "Subject": {
+                        "Role": "dim_customer"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_customer": {
+                    "Target": {
+                      "Entity": "dim_customer"
+                    }
+                  },
+                  "dim_customer.customer_name": {
+                    "Target": {
+                      "Entity": "dim_customer.customer_name"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_customer_has_customer_type": {
                 "Binding": {
                   "ConceptualEntity": "DimCustomer"
@@ -7289,98 +7381,6 @@
                   "dim_customer.is_active": {
                     "Target": {
                       "Entity": "dim_customer.is_active"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_customer_is_named_customer_ID": {
-                "Binding": {
-                  "ConceptualEntity": "DimCustomer"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "customer_ID_are_names_IDs_of_dim_customers",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_customer.customer_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_customer"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_customer.customer_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_customer"
-                      }
-                    },
-                    "ID": "dim_customers_have_customer_ID",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_customer": {
-                    "Target": {
-                      "Entity": "dim_customer"
-                    }
-                  },
-                  "dim_customer.customer_ID": {
-                    "Target": {
-                      "Entity": "dim_customer.customer_ID"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_customer_is_named_customer_name": {
-                "Binding": {
-                  "ConceptualEntity": "DimCustomer"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "customer_names_are_names_IDs_of_dim_customers",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_customer.customer_name"
-                      },
-                      "Subject": {
-                        "Role": "dim_customer"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_customer.customer_name"
-                      },
-                      "Subject": {
-                        "Role": "dim_customer"
-                      }
-                    },
-                    "ID": "dim_customers_have_customer_names",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_customer": {
-                    "Target": {
-                      "Entity": "dim_customer"
-                    }
-                  },
-                  "dim_customer.customer_name": {
-                    "Target": {
-                      "Entity": "dim_customer.customer_name"
                     }
                   }
                 },
@@ -7907,6 +7907,112 @@
                 },
                 "State": "Generated"
               },
+              "dim_product_has_list_price": {
+                "Binding": {
+                  "ConceptualEntity": "DimProduct"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_product.list_price"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "dim_products_have_list_prices",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Adjective": {
+                      "Adjectives": [
+                        {
+                          "expensive": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Antonyms": [
+                        {
+                          "cheap": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Measurement": {
+                        "Role": "dim_product.list_price"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "list_price_indicates_how_expensive_dim_products_are",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_product": {
+                    "Target": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "dim_product.list_price": {
+                    "Target": {
+                      "Entity": "dim_product.list_price"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_product_has_product_ID": {
+                "Binding": {
+                  "ConceptualEntity": "DimProduct"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_product.product_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "dim_products_have_product_ID",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "product_ID_are_names_IDs_of_dim_products",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_product.product_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_product": {
+                    "Target": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "dim_product.product_ID": {
+                    "Target": {
+                      "Entity": "dim_product.product_ID"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_product_has_product_category": {
                 "Binding": {
                   "ConceptualEntity": "DimProduct"
@@ -7935,6 +8041,98 @@
                   "dim_product.product_category": {
                     "Target": {
                       "Entity": "dim_product.product_category"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_product_has_product_name": {
+                "Binding": {
+                  "ConceptualEntity": "DimProduct"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_product.product_name"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "dim_products_have_product_names",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "product_names_are_names_IDs_of_dim_products",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_product.product_name"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_product": {
+                    "Target": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "dim_product.product_name": {
+                    "Target": {
+                      "Entity": "dim_product.product_name"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_product_has_product_number": {
+                "Binding": {
+                  "ConceptualEntity": "DimProduct"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_product.product_number"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "dim_products_have_product_numbers",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "product_numbers_are_names_IDs_of_dim_products",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_product.product_number"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_product": {
+                    "Target": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "dim_product.product_number": {
+                    "Target": {
+                      "Entity": "dim_product.product_number"
                     }
                   }
                 },
@@ -8072,6 +8270,66 @@
                 },
                 "State": "Generated"
               },
+              "dim_product_has_standard_cost": {
+                "Binding": {
+                  "ConceptualEntity": "DimProduct"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_product.standard_cost"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "dim_products_have_standard_costs",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Adjective": {
+                      "Adjectives": [
+                        {
+                          "expensive": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Antonyms": [
+                        {
+                          "cheap": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Measurement": {
+                        "Role": "dim_product.standard_cost"
+                      },
+                      "Subject": {
+                        "Role": "dim_product"
+                      }
+                    },
+                    "ID": "standard_cost_indicates_how_expensive_dim_products_are",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_product": {
+                    "Target": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "dim_product.standard_cost": {
+                    "Target": {
+                      "Entity": "dim_product.standard_cost"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_product_is_active": {
                 "Binding": {
                   "ConceptualEntity": "DimProduct"
@@ -8160,264 +8418,6 @@
                 "SemanticSlots": {
                   "When": {
                     "Role": "dim_product.sell_end_date"
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_product_is_expensive": {
-                "Binding": {
-                  "ConceptualEntity": "DimProduct"
-                },
-                "Phrasings": [
-                  {
-                    "Adjective": {
-                      "Adjectives": [
-                        {
-                          "expensive": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Antonyms": [
-                        {
-                          "cheap": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Measurement": {
-                        "Role": "dim_product.standard_cost"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "standard_cost_indicates_how_expensive_dim_products_are",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_product.standard_cost"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "dim_products_have_standard_costs",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_product": {
-                    "Target": {
-                      "Entity": "dim_product"
-                    }
-                  },
-                  "dim_product.standard_cost": {
-                    "Target": {
-                      "Entity": "dim_product.standard_cost"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_product_is_expensive1": {
-                "Binding": {
-                  "ConceptualEntity": "DimProduct"
-                },
-                "Phrasings": [
-                  {
-                    "Adjective": {
-                      "Adjectives": [
-                        {
-                          "expensive": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Antonyms": [
-                        {
-                          "cheap": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Measurement": {
-                        "Role": "dim_product.list_price"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "list_price_indicates_how_expensive_dim_products_are",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_product.list_price"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "dim_products_have_list_prices",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_product": {
-                    "Target": {
-                      "Entity": "dim_product"
-                    }
-                  },
-                  "dim_product.list_price": {
-                    "Target": {
-                      "Entity": "dim_product.list_price"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_product_is_named_product_ID": {
-                "Binding": {
-                  "ConceptualEntity": "DimProduct"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "product_ID_are_names_IDs_of_dim_products",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_product.product_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_product.product_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "dim_products_have_product_ID",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_product": {
-                    "Target": {
-                      "Entity": "dim_product"
-                    }
-                  },
-                  "dim_product.product_ID": {
-                    "Target": {
-                      "Entity": "dim_product.product_ID"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_product_is_named_product_name": {
-                "Binding": {
-                  "ConceptualEntity": "DimProduct"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "product_names_are_names_IDs_of_dim_products",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_product.product_name"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_product.product_name"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "dim_products_have_product_names",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_product": {
-                    "Target": {
-                      "Entity": "dim_product"
-                    }
-                  },
-                  "dim_product.product_name": {
-                    "Target": {
-                      "Entity": "dim_product.product_name"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_product_is_named_product_number": {
-                "Binding": {
-                  "ConceptualEntity": "DimProduct"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "product_numbers_are_names_IDs_of_dim_products",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_product.product_number"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_product.product_number"
-                      },
-                      "Subject": {
-                        "Role": "dim_product"
-                      }
-                    },
-                    "ID": "dim_products_have_product_numbers",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_product": {
-                    "Target": {
-                      "Entity": "dim_product"
-                    }
-                  },
-                  "dim_product.product_number": {
-                    "Target": {
-                      "Entity": "dim_product.product_number"
-                    }
                   }
                 },
                 "State": "Generated"
@@ -8662,6 +8662,52 @@
                 },
                 "State": "Generated"
               },
+              "dim_sales_person_has_sales_person_ID": {
+                "Binding": {
+                  "ConceptualEntity": "DimSalesPerson"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_sales_person.sales_person_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_sales_person"
+                      }
+                    },
+                    "ID": "dim_sales_people_have_sales_person_ID",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "sales_person_ID_are_names_IDs_of_dim_sales_people",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_sales_person.sales_person_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_sales_person"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_sales_person": {
+                    "Target": {
+                      "Entity": "dim_sales_person"
+                    }
+                  },
+                  "dim_sales_person.sales_person_ID": {
+                    "Target": {
+                      "Entity": "dim_sales_person.sales_person_ID"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_sales_person_has_sales_quota": {
                 "Binding": {
                   "ConceptualEntity": "DimSalesPerson"
@@ -8723,52 +8769,6 @@
                   "dim_sales_person.territory_ID": {
                     "Target": {
                       "Entity": "dim_sales_person.territory_ID"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_sales_person_is_named_sales_person_ID": {
-                "Binding": {
-                  "ConceptualEntity": "DimSalesPerson"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "sales_person_ID_are_names_IDs_of_dim_sales_people",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_sales_person.sales_person_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_sales_person"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_sales_person.sales_person_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_sales_person"
-                      }
-                    },
-                    "ID": "dim_sales_people_have_sales_person_ID",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_sales_person": {
-                    "Target": {
-                      "Entity": "dim_sales_person"
-                    }
-                  },
-                  "dim_sales_person.sales_person_ID": {
-                    "Target": {
-                      "Entity": "dim_sales_person.sales_person_ID"
                     }
                   }
                 },
@@ -8840,6 +8840,98 @@
                 },
                 "State": "Generated"
               },
+              "dim_sales_territory_has_territory_ID": {
+                "Binding": {
+                  "ConceptualEntity": "DimSalesTerritory"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_sales_territory.territory_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_sales_territory"
+                      }
+                    },
+                    "ID": "dim_sales_territories_have_territory_ID",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "territory_ID_are_names_IDs_of_dim_sales_territories",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_sales_territory.territory_ID"
+                      },
+                      "Subject": {
+                        "Role": "dim_sales_territory"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_sales_territory": {
+                    "Target": {
+                      "Entity": "dim_sales_territory"
+                    }
+                  },
+                  "dim_sales_territory.territory_ID": {
+                    "Target": {
+                      "Entity": "dim_sales_territory.territory_ID"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
+              "dim_sales_territory_has_territory_name": {
+                "Binding": {
+                  "ConceptualEntity": "DimSalesTerritory"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "dim_sales_territory.territory_name"
+                      },
+                      "Subject": {
+                        "Role": "dim_sales_territory"
+                      }
+                    },
+                    "ID": "dim_sales_territories_have_territory_names",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "ID": "territory_names_are_names_IDs_of_dim_sales_territories",
+                    "Name": {
+                      "Name": {
+                        "Role": "dim_sales_territory.territory_name"
+                      },
+                      "Subject": {
+                        "Role": "dim_sales_territory"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "dim_sales_territory": {
+                    "Target": {
+                      "Entity": "dim_sales_territory"
+                    }
+                  },
+                  "dim_sales_territory.territory_name": {
+                    "Target": {
+                      "Entity": "dim_sales_territory.territory_name"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "dim_sales_territory_in_country_region": {
                 "Binding": {
                   "ConceptualEntity": "DimSalesTerritory"
@@ -8881,98 +8973,6 @@
                 "SemanticSlots": {
                   "Where": {
                     "Role": "dim_sales_territory.country_region"
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_sales_territory_is_named_territory_ID": {
-                "Binding": {
-                  "ConceptualEntity": "DimSalesTerritory"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "territory_ID_are_names_IDs_of_dim_sales_territories",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_sales_territory.territory_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_sales_territory"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_sales_territory.territory_ID"
-                      },
-                      "Subject": {
-                        "Role": "dim_sales_territory"
-                      }
-                    },
-                    "ID": "dim_sales_territories_have_territory_ID",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_sales_territory": {
-                    "Target": {
-                      "Entity": "dim_sales_territory"
-                    }
-                  },
-                  "dim_sales_territory.territory_ID": {
-                    "Target": {
-                      "Entity": "dim_sales_territory.territory_ID"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "dim_sales_territory_is_named_territory_name": {
-                "Binding": {
-                  "ConceptualEntity": "DimSalesTerritory"
-                },
-                "Phrasings": [
-                  {
-                    "ID": "territory_names_are_names_IDs_of_dim_sales_territories",
-                    "Name": {
-                      "Name": {
-                        "Role": "dim_sales_territory.territory_name"
-                      },
-                      "Subject": {
-                        "Role": "dim_sales_territory"
-                      }
-                    },
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "dim_sales_territory.territory_name"
-                      },
-                      "Subject": {
-                        "Role": "dim_sales_territory"
-                      }
-                    },
-                    "ID": "dim_sales_territories_have_territory_names",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "dim_sales_territory": {
-                    "Target": {
-                      "Entity": "dim_sales_territory"
-                    }
-                  },
-                  "dim_sales_territory.territory_name": {
-                    "Target": {
-                      "Entity": "dim_sales_territory.territory_name"
-                    }
                   }
                 },
                 "State": "Generated"
@@ -9339,6 +9339,66 @@
                 },
                 "State": "Generated"
               },
+              "fact_sale_has_measure_BI_average_selling_price": {
+                "Binding": {
+                  "ConceptualEntity": "FactSales"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "measure_BI.average_selling_price"
+                      },
+                      "Subject": {
+                        "Role": "fact_sale"
+                      }
+                    },
+                    "ID": "fact_sales_have_average_selling_price",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Adjective": {
+                      "Adjectives": [
+                        {
+                          "expensive": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Antonyms": [
+                        {
+                          "cheap": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Measurement": {
+                        "Role": "measure_BI.average_selling_price"
+                      },
+                      "Subject": {
+                        "Role": "fact_sale"
+                      }
+                    },
+                    "ID": "average_selling_price_indicates_how_expensive_fact_sales_are",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_sale": {
+                    "Target": {
+                      "Entity": "fact_sale"
+                    }
+                  },
+                  "measure_BI.average_selling_price": {
+                    "Target": {
+                      "Entity": "measure_BI.average_selling_price"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_sale_has_measure_BI_latest_comparable_YoY_": {
                 "Binding": {
                   "ConceptualEntity": "FactSales"
@@ -9353,7 +9413,7 @@
                         "Role": "fact_sale"
                       }
                     },
-                    "ID": "fact_sales_have_latest_comparable_YoY_",
+                    "ID": "fact_sales_have_executive_YoY_growth_YTD_",
                     "State": "Generated",
                     "Weight": 0.99
                   }
@@ -9702,6 +9762,66 @@
                 },
                 "State": "Generated"
               },
+              "fact_sale_has_unit_price": {
+                "Binding": {
+                  "ConceptualEntity": "FactSales"
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Object": {
+                        "Role": "fact_sale.unit_price"
+                      },
+                      "Subject": {
+                        "Role": "fact_sale"
+                      }
+                    },
+                    "ID": "fact_sales_have_unit_prices",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  },
+                  {
+                    "Adjective": {
+                      "Adjectives": [
+                        {
+                          "expensive": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Antonyms": [
+                        {
+                          "cheap": {
+                            "State": "Generated"
+                          }
+                        }
+                      ],
+                      "Measurement": {
+                        "Role": "fact_sale.unit_price"
+                      },
+                      "Subject": {
+                        "Role": "fact_sale"
+                      }
+                    },
+                    "ID": "unit_price_indicates_how_expensive_fact_sales_are",
+                    "State": "Generated",
+                    "Weight": 0.99
+                  }
+                ],
+                "Roles": {
+                  "fact_sale": {
+                    "Target": {
+                      "Entity": "fact_sale"
+                    }
+                  },
+                  "fact_sale.unit_price": {
+                    "Target": {
+                      "Entity": "fact_sale.unit_price"
+                    }
+                  }
+                },
+                "State": "Generated"
+              },
               "fact_sale_has_unit_price_discount": {
                 "Binding": {
                   "ConceptualEntity": "FactSales"
@@ -9730,126 +9850,6 @@
                   "fact_sale.unit_price_discount": {
                     "Target": {
                       "Entity": "fact_sale.unit_price_discount"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "fact_sale_is_expensive": {
-                "Binding": {
-                  "ConceptualEntity": "FactSales"
-                },
-                "Phrasings": [
-                  {
-                    "Adjective": {
-                      "Adjectives": [
-                        {
-                          "expensive": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Antonyms": [
-                        {
-                          "cheap": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Measurement": {
-                        "Role": "fact_sale.unit_price"
-                      },
-                      "Subject": {
-                        "Role": "fact_sale"
-                      }
-                    },
-                    "ID": "unit_price_indicates_how_expensive_fact_sales_are",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "fact_sale.unit_price"
-                      },
-                      "Subject": {
-                        "Role": "fact_sale"
-                      }
-                    },
-                    "ID": "fact_sales_have_unit_prices",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "fact_sale": {
-                    "Target": {
-                      "Entity": "fact_sale"
-                    }
-                  },
-                  "fact_sale.unit_price": {
-                    "Target": {
-                      "Entity": "fact_sale.unit_price"
-                    }
-                  }
-                },
-                "State": "Generated"
-              },
-              "fact_sale_is_expensive1": {
-                "Binding": {
-                  "ConceptualEntity": "FactSales"
-                },
-                "Phrasings": [
-                  {
-                    "Adjective": {
-                      "Adjectives": [
-                        {
-                          "expensive": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Antonyms": [
-                        {
-                          "cheap": {
-                            "State": "Generated"
-                          }
-                        }
-                      ],
-                      "Measurement": {
-                        "Role": "measure_BI.average_selling_price"
-                      },
-                      "Subject": {
-                        "Role": "fact_sale"
-                      }
-                    },
-                    "ID": "average_selling_price_indicates_how_expensive_fact_sales_are",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  },
-                  {
-                    "Attribute": {
-                      "Object": {
-                        "Role": "measure_BI.average_selling_price"
-                      },
-                      "Subject": {
-                        "Role": "fact_sale"
-                      }
-                    },
-                    "ID": "fact_sales_have_average_selling_price",
-                    "State": "Generated",
-                    "Weight": 0.99
-                  }
-                ],
-                "Roles": {
-                  "fact_sale": {
-                    "Target": {
-                      "Entity": "fact_sale"
-                    }
-                  },
-                  "measure_BI.average_selling_price": {
-                    "Target": {
-                      "Entity": "measure_BI.average_selling_price"
                     }
                   }
                 },
@@ -11082,12 +11082,18 @@
         "measures": [
           {
             "name": "Total Sales",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
             "displayFolder": "Sales",
             "expression": [
               "",
               "SUM ( FactSales[LineTotal] )"
             ],
-            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "lineageTag": "f0319e29-2b1d-4cea-afce-c4be22b931ac"
           },
           {
@@ -11125,6 +11131,12 @@
           },
           {
             "name": "Average Selling Price",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
             "displayFolder": "Sales",
             "expression": [
               "",
@@ -11133,7 +11145,7 @@
               "    [Total Quantity Sold]",
               ")"
             ],
-            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "lineageTag": "2cd66f09-7cd6-4f35-b575-cbfa1581455c"
           },
           {
@@ -11151,6 +11163,12 @@
           },
           {
             "name": "Sales YTD",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
             "displayFolder": "Time Intelligence",
             "expression": [
               "",
@@ -11159,7 +11177,7 @@
               "    DimDate[Date]",
               ")"
             ],
-            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "lineageTag": "0e383fdf-e92c-46ca-b3a4-27b8410a790b"
           },
           {
@@ -11196,6 +11214,12 @@
           },
           {
             "name": "Sales Last Year",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
             "displayFolder": "Time Intelligence",
             "expression": [
               "",
@@ -11204,7 +11228,7 @@
               "    SAMEPERIODLASTYEAR ( DimDate[Date] )",
               ")"
             ],
-            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "lineageTag": "180a06f9-f707-4719-a24d-dbaf3b276c02"
           },
           {
@@ -11212,10 +11236,18 @@
             "displayFolder": "Time Intelligence",
             "expression": [
               "",
-              "DIVIDE (",
-              "    [Total Sales] - [Sales Last Year],",
-              "    [Sales Last Year]",
-              ")"
+              "VAR CurrentSales = [Total Sales]",
+              "VAR PreviousSales = [Sales Last Year]",
+              "RETURN",
+              "    IF (",
+              "        ISBLANK ( CurrentSales )",
+              "            || ISBLANK ( PreviousSales ),",
+              "        BLANK (),",
+              "        DIVIDE (",
+              "            CurrentSales - PreviousSales,",
+              "            PreviousSales",
+              "        )",
+              "    )"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "80cb4257-2b14-4813-8e8c-f223dc8549af"
@@ -11284,6 +11316,16 @@
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "f8284bab-3557-4748-b467-c0a3583a8d77"
+          },
+          {
+            "name": "Total Customers",
+            "displayFolder": "Sales",
+            "expression": [
+              "",
+              "DISTINCTCOUNT ( FactSales[CustomerID] )"
+            ],
+            "formatString": "0",
+            "lineageTag": "8dc6074f-4aef-4b87-97cf-a0ffce0db312"
           }
         ],
         "partitions": [
