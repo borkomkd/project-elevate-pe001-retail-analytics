@@ -6270,7 +6270,7 @@
                 "Definition": {
                   "Binding": {
                     "ConceptualEntity": "MeasuresBI",
-                    "ConceptualProperty": "Executive YoY Growth YTD %"
+                    "ConceptualProperty": "Latest YoY Growth YTD %"
                   }
                 },
                 "State": "Generated",
@@ -10183,7 +10183,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Source = Sql.Database(\"sql-pe001-retail-analytics.database.windows.net\", \"sqldb-pe001-adventureworks\"),",
                 "    Reporting_vw_DimCustomer = Source{[Schema=\"Reporting\",Item=\"vw_DimCustomer\"]}[Data]",
                 "in",
                 "    Reporting_vw_DimCustomer"
@@ -10385,7 +10385,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Source = Sql.Database(\"sql-pe001-retail-analytics.database.windows.net\", \"sqldb-pe001-adventureworks\"),",
                 "    Reporting_vw_DimProduct = Source{[Schema=\"Reporting\",Item=\"vw_DimProduct\"]}[Data]",
                 "in",
                 "    Reporting_vw_DimProduct"
@@ -10562,7 +10562,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Source = Sql.Database(\"sql-pe001-retail-analytics.database.windows.net\", \"sqldb-pe001-adventureworks\"),",
                 "    Reporting_vw_DimSalesPerson = Source{[Schema=\"Reporting\",Item=\"vw_DimSalesPerson\"]}[Data]",
                 "in",
                 "    Reporting_vw_DimSalesPerson"
@@ -10647,7 +10647,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Source = Sql.Database(\"sql-pe001-retail-analytics.database.windows.net\", \"sqldb-pe001-adventureworks\"),",
                 "    Reporting_vw_DimSalesTerritory = Source{[Schema=\"Reporting\",Item=\"vw_DimSalesTerritory\"]}[Data]",
                 "in",
                 "    Reporting_vw_DimSalesTerritory"
@@ -10844,7 +10844,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Source = Sql.Database(\"sql-pe001-retail-analytics.database.windows.net\", \"sqldb-pe001-adventureworks\"),",
                 "    Reporting_vw_FactSales = Source{[Schema=\"Reporting\",Item=\"vw_FactSales\"]}[Data]",
                 "in",
                 "    Reporting_vw_FactSales"
@@ -11040,7 +11040,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Sql.Database(\"HP-Borko\\SQLSERVER2022\", \"AdventureWorks2022\"),",
+                "    Source = Sql.Database(\"sql-pe001-retail-analytics.database.windows.net\", \"sqldb-pe001-adventureworks\"),",
                 "    Reporting_DimDate = Source{[Schema=\"Reporting\",Item=\"DimDate\"]}[Data],",
                 "    #\"Renamed Columns\" = Table.RenameColumns(Reporting_DimDate,{{\"FullDate\", \"Date\"}})",
                 "in",
@@ -11281,7 +11281,7 @@
             "lineageTag": "fb309d5d-da5b-4e84-8011-ccf7ed1aef1d"
           },
           {
-            "name": "Executive YoY Growth YTD %",
+            "name": "Latest YoY Growth YTD %",
             "displayFolder": "Time Intelligence",
             "expression": [
               "",
